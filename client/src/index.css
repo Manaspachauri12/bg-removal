@@ -1,0 +1,38 @@
+/* Import Tailwind's base styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+
+/* Import Tailwind's component styles */
+@tailwind components;
+
+/* Import Tailwind's utility classes */
+@tailwind utilities;
+
+/* You can add custom global styles below */
+* {
+  font-family: Outfit;
+}
+
+
+.slider{
+  -webkit-appearance: none;
+  background: transparent;
+  
+}
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  
+  min-height:30px;
+  background-image: url(/slide_icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+
+}
+
+.bg-layer{
+  background-image: url(/bg_layer.png);
+}
