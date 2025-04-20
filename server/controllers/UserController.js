@@ -32,7 +32,7 @@ const clerkWebhook = async (req, res) => {
       case "user.created": {
 
         const userData = {
-          clerkid: data.id,
+          clerkId: data.id,
           email: data.email_addresses[0].email_address,
           photo: data.image_url,
           firstName: data.first_name,
