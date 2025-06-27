@@ -1,6 +1,4 @@
 import { Webhook } from "svix"
-
-import { json } from "express";
 import userModel from "../models/userModels.js";
 
 
