@@ -1,5 +1,11 @@
-import { Webhook } from "svix"
+
+
+
 import userModel from "../models/userModels.js";
+import { Webhook } from "svix";               // For Clerk webhook signature verification
+
+
+
 
 
 
@@ -39,7 +45,7 @@ const clerkWebhook = async (req, res) => {
           
         }
         await userModel.create(userData)
-        res.json({  });
+        res.json({ });
         
 
         break;
@@ -84,4 +90,25 @@ const clerkWebhook = async (req, res) => {
 
 }
 
-export { clerkWebhook };
+
+
+//API CONTROLLER FUNCTION TO GET USER AVAILABLE CREDITS DATA
+
+const userCredits = async (req, res) => {
+  try {
+    const { clerkId } = req.body;
+    const userData = await userModel.findOne({ clerkId });
+    
+
+    res.json({ success: true, credits: userData.creditBalance });
+
+
+  }catch (error) {
+    console.log(error.message);
+    res.json({ success:false, message: error.message });
+    
+  }
+}
+
+
+export { clerkWebhook,userCredits };
