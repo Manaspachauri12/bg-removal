@@ -30,7 +30,7 @@ const removeBgImage= async (req, res) => {
     const { data } = await axios.post('https://clipdrop-api.co/remove-background/v1', formdata, {
       headers: {
        
-        'x-api-key': process.env.CLIPDROP_API_KEY,
+        'x-api-key': process.env.CLIPDROP_API,
       },
       responseType:'arraybuffer'
     })
